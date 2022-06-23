@@ -1,0 +1,13 @@
+---
+- name: Ansible Create user functionlity module demo
+  hosts: nodos # Defining the remote server inventory host group
+# Defining the remote server where the ansible create user module 
+# will manage the objects
+  remote_user: dam # Using Remote user as ubuntu
+  tasks:
+    - name: Remove the user 'Jarvis' if present in the linux system
+      ansible.builtin.user:
+        name: jarvis
+        state: absent
+        remove: yes
+
